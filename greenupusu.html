@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reativa Green Up - Envio de Foto</title>
+  <style>
+    :root {
+      --verde: #27ae60;
+      --verde-escuro: #1e8449;
+      --cinza-claro: #f4f4f4;
+      --cinza-texto: #555;
+      --branco: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--cinza-claro);
+      color: var(--cinza-texto);
+    }
+
+    header {
+      background-color: var(--verde);
+      color: var(--branco);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: var(--branco);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .empresa {
+      margin-bottom: 40px;
+    }
+
+    .empresa h2 {
+      color: var(--verde-escuro);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .empresa p {
+      line-height: 1.6;
+    }
+
+    .upload-form {
+      text-align: center;
+    }
+
+    .upload-form h2 {
+      margin-bottom: 15px;
+      color: var(--verde-escuro);
+    }
+
+    .upload-form input[type="file"] {
+      padding: 10px;
+      margin: 15px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .upload-form button {
+      background-color: var(--verde);
+      color: var(--branco);
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-form button:hover {
+      background-color: var(--verde-escuro);
+    }
+
+    .mensagem-info {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: var(--cinza-texto);
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .empresa h2, .upload-form h2 {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Reativa Green Up</h1>
+    <p>Conscientização ambiental começa com pequenas atitudes. Participe!</p>
+  </header>
+
+  <div class="container">
+
+    <section class="empresa">
+      <h2>Sobre o Projeto</h2>
+      <p>
+        O plástico é um dos materiais mais utilizados no mundo contemporâneo, devido à sua praticidade, versatilidade e baixo custo. No entanto, seu descarte inadequado e sua lenta degradação têm causado sérios impactos ambientais, afetando ecossistemas terrestres e aquáticos.
+      </p>
+      <p>
+        Este trabalho tem como objetivo analisar os efeitos do plástico e dos microplásticos no meio ambiente e propor ações educativas para reduzir seu consumo na comunidade escolar. Por meio do projeto <strong>"Sacola Plástica? Tô Fora!"</strong>, foram realizadas campanhas de conscientização, oficinas de ecobags e atividades de sensibilização, envolvendo alunos, professores e funcionários.
+      </p>
+      <p>
+        A metodologia adotada incluiu pesquisas, atividades práticas e avaliações de impacto, com resultados positivos na mudança de hábitos e na redução do uso de sacolas plásticas. Este estudo reforça a importância da educação ambiental como ferramenta de transformação social e preservação dos recursos naturais.
+      </p>
+    </section>
+
+    <section class="upload-form">
+      <h2>Envie a foto do seu eletrodoméstico</h2>
+      <p>Queremos avaliar para garantir o descarte correto e ecológico.</p>
+
+      <form id="form-envio">
+        <input type="file" name="foto" accept="image/*" required><br>
+        <button type="submit">Enviar Foto</button>
+      </form>
+
+      <div class="mensagem-info" id="mensagem-confirmacao">
+        Obrigado! A equipe da <strong>Reativa Green Up</strong> irá analisar sua solicitação em até <strong>24 horas</strong> e você receberá um retorno no seu e-mail.
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Reativa Green Up. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const form = document.getElementById('form-envio');
+    const mensagem = document.getElementById('mensagem-confirmacao');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Evita que o formulário recarregue a página
+
+      // Aqui você poderia usar JavaScript para enviar o arquivo via AJAX
+
+      // Mostra a mensagem de confirmação
+      mensagem.style.display = 'block';
+
+      // Opcional: limpar o formulário
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
